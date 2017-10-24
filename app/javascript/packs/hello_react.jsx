@@ -5,9 +5,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
+import CommentListContainer from 'components/CommentListContainer'
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div>
+    Hello {props.name}!
+    <br />
+    <CommentListContainer />
+  </div>
 )
 
 Hello.defaultProps = {
@@ -21,6 +26,6 @@ Hello.propTypes = {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Hello name="React" />,
-    document.body.appendChild(document.createElement('div')),
+    document.getElementById('react-root'),
   )
 })
